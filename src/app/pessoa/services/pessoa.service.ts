@@ -43,7 +43,7 @@ export class PessoaService {
   remover(id: number): void{
     let pessoas: Pessoa[] = this.listarTodos();
 
-    pessoas = pessoas.filter((pessoa) =>{ pessoa.id !== id});
+    pessoas = pessoas.filter(pessoa => pessoa.id !== id);
 
     localStorage[LS_CHAVE] = JSON.stringify(pessoas);
   }

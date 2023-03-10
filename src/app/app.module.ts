@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PessoaModule } from './pessoa/pessoa.module';
+import { EnderecoModule } from './endereco/endereco.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CidadeModule } from './cidade/cidade.module';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,14 @@ import { PessoaModule } from './pessoa/pessoa.module';
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
-    PessoaModule
+    FontAwesomeModule,
+    PessoaModule,
+    EnderecoModule,
+    CidadeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  
+ }

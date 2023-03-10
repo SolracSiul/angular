@@ -1,0 +1,37 @@
+<p>editar-endereco works!</p>
+<h1>Esse é o componente responsável por editar um usuário: </h1>
+<div class="well">
+    <form #formEndereco="ngForm">
+        <div class="form-group">
+            <label for="rua">Rua:</label>
+            <input type="text" class="form-control"  name="rua" id="rua" minlength="2" required [(ngModel)]="endereco.rua" #rua="ngModel">
+            <div *ngIf="rua.errors && (rua.dirty || rua.touched)" class="alert alert-danger">
+                <div [hidden]="!rua.errors['required']">Digite o nome da pessoa</div>
+                <div [hidden]="!rua.errors['minlength']">O nome deve conter ao menos 2 caracteres</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="numero">Numero:</label>
+            <input type="text" class="form-control" id="numero" name="numero" required [(ngModel)]="endereco.numero" #numero="ngModel"> 
+            <div *ngIf="numero.errors && (numero.dirty || numero.touched)" class="alert alert-danger mt-2">
+                <div>Digite o número da casa</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bairro">Bairro:</label>
+            <input type="text" class="form-control" id="bairro" name="bairro" required [(ngModel)]="endereco.bairro" #bairro="ngModel"> 
+            <div *ngIf="bairro.errors && (bairro.dirty || bairro.touched)" class="alert alert-danger mt-2">
+                <div>Informe a data de Nascimento</div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" (click)="atualizar()" [disabled]="!formEndereco.form.valid">
+                <fa-icon [icon]="faSave"></fa-icon> Atualizar
+            </button>
+            <a class="btn btn-secondary mx-2" [routerLink]="['/enderecos/listar']">
+                <fa-icon [icon]="faArrowLeft" aria-hidden="true"></fa-icon> Voltar
+            </a>
+        </div>
+    </form>
+</div>
