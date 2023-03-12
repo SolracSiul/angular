@@ -1,0 +1,34 @@
+<p>inserir-estado works!</p>
+
+<h1>Eae sorak, aqui iremos inserir Estados!</h1>
+<div class="well">
+    <form #formEstado="ngForm">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" minlength="2" required
+            [(ngModel)]="estado.nome" #nome="ngModel" >
+            <div class="alert alert-danger" *ngIf="nome.errors && (nome.dirty || nome.touched)">
+                <div [hidden]="!nome.errors['required']">Digite o nome do Estado.</div>
+                <div [hidden]="!nome.errors['minlength']">O nome deve conter ao menos 2 caracteres</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="sigla">Sigla: </label>
+            <input type="text" class="form-control" id="sigla" name="sigla" 
+            [(ngModel)]="estado.sigla" #sigla="ngModel" required>
+            <div class="alert alert-danger" *ngIf="sigla.errors &&(sigla.dirty || sigla.touched)">
+                <div [hidden]="!sigla.errors['required']">Digite a sigla do estado. </div>
+                <div [hidden]="!sigla.errors['minimo']"> Idade deve ser maior ou igual a 18</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" (click)="inserir()" [disabled]="!formEstado.form.valid">
+                <fa-icon [icon]="faSave"></fa-icon> Salvar
+            </button>
+            <a class="btn btn-secondary" [routerLink]="['/estados/listar']">
+                <fa-icon [icon]="faArrowLeft" aria-hidden="true"></fa-icon> Voltar
+            </a>
+        </div> 
+    </form>
+
+</div>

@@ -26,7 +26,7 @@ export class ListarCidadeComponent implements OnInit{
   }
   remover($event: any, cidade: Cidade): void{
     $event.preventDefault();
-    if(confirm(`Deseja remover a pessoa ${cidade.nome}?`)){
+    if(confirm(`Deseja remover a cidade ${cidade.nome}?`)){
       this.cidadeService.remover(cidade.id!);
       this.cidades = this.listarTodos();
     }

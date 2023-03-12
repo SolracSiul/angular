@@ -24,7 +24,7 @@ export class CidadeService {
 
     localStorage[LS_CHAVE] = JSON.stringify(cidades);
   }
-  buscarPessoaPorId(id: number): Cidade | undefined{
+  buscarCidadePorId(id: number): Cidade | undefined{
     const cidades: Cidade[] = this.listarTodos();
 
     return cidades.find(cidade => cidade.id === id)

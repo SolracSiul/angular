@@ -1,5 +1,5 @@
 <p>editar-endereco works!</p>
-<h1>Esse é o componente responsável por editar um usuário: </h1>
+<h1>Esse é o componente responsável por editar um endereço</h1>
 <div class="well">
     <form #formEndereco="ngForm">
         <div class="form-group">
@@ -18,10 +18,38 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="complemento">Complemento:</label>
+            <input type="text" class="form-control" id="complemento" name="complemento" required [(ngModel)]="endereco.complemento" #complemento="ngModel"> 
+            <div *ngIf="complemento.errors && (complemento.dirty || complemento.touched)" class="alert alert-danger mt-2">
+                <div>Informe o complemento</div>
+            </div>
+        </div>
+        <div class="form-group">
             <label for="bairro">Bairro:</label>
             <input type="text" class="form-control" id="bairro" name="bairro" required [(ngModel)]="endereco.bairro" #bairro="ngModel"> 
             <div *ngIf="bairro.errors && (bairro.dirty || bairro.touched)" class="alert alert-danger mt-2">
-                <div>Informe a data de Nascimento</div>
+                <div>Informe o bairro</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="cep">Cep:</label>
+            <input type="text" class="form-control" id="cep" name="cep" required [(ngModel)]="endereco.cep" #cep="ngModel"> 
+            <div *ngIf="cep.errors && (cep.dirty || cep.touched)" class="alert alert-danger mt-2">
+                <div>Informe o CEP</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="cidade">Cidade:</label>
+            <input type="text" class="form-control" id="cidade" name="cidade" required [(ngModel)]="endereco.cidade" #cidade="ngModel"> 
+            <div *ngIf="cidade.errors && (cidade.dirty || cidade.touched)" class="alert alert-danger mt-2">
+                <div>Informe a Cidade</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="estado">Estado:</label>
+            <input type="text" class="form-control" id="estado" name="estado" required [(ngModel)]="endereco.estado" #estado="ngModel"> 
+            <div *ngIf="estado.errors && (estado.dirty || estado.touched)" class="alert alert-danger mt-2">
+                <div>Informe o Estado</div>
             </div>
         </div>
         

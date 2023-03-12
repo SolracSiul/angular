@@ -6,7 +6,11 @@
         <tr>
             <th>Rua</th>
             <th>Número</th>
+            <th>Complemento</th>
             <th>Bairro</th>
+            <th>CEP</th>
+            <th>Cidade</th>
+            <th>estado</th>
             <th class="text-center">
                 <a href="#" title="Novo" alt="Novo" [routerLink]="['/enderecos/novo']">
                     <fa-icon [icon]="faPlus"></fa-icon> Novo
@@ -16,7 +20,11 @@
         <tr *ngFor="let endereco of enderecos">
             <td>{{endereco.rua}}</td>
             <td>{{endereco.numero}}</td>
+            <th>{{endereco.complemento}}</th>
             <th>{{endereco.bairro}}</th>
+            <th>{{endereco.cep}}</th>
+            <th>{{endereco.cidade}}</th>
+            <th>{{endereco.estado}}</th>
             <td class="text-center" style="width: 300px">
                 <a href="#" [routerLink]="['/enderecos/editar', endereco.id]" title="Editar" alt="Editar" class="btn btn-xs btn-info">
                     <fa-icon [icon]="faedit"></fa-icon> Editar</a>

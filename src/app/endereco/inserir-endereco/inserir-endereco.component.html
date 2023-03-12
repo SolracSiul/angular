@@ -18,7 +18,15 @@
             <input type="text" class="form-control" id="numero" name="numero" required
             [(ngModel)]="endereco.numero" #numero="ngModel">
             <div class="alert alert-danger" *ngIf="numero.errors &&(numero.dirty || numero.touched)">
-                <div [hidden]="!numero.errors['required']">Digite o número da pessoa. </div>
+                <div [hidden]="!numero.errors['required']">Digite um número válido </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="complemento">Complemento: </label>
+            <input type="text" class="form-control" id="complemento" name="complemento" required
+            [(ngModel)]="endereco.complemento" #complemento="ngModel">
+            <div class="alert alert-danger" *ngIf="complemento.errors &&(complemento.dirty || complemento.touched)">
+                <div [hidden]="!complemento.errors['required']">Digite um complemento </div>
             </div>
         </div>
         <div class="form-group">
@@ -26,14 +34,38 @@
             <input type="text" class="form-control" id="bairro" name="bairro" required
             [(ngModel)]="endereco.bairro" #bairro="ngModel">
             <div class="alert alert-danger" *ngIf="bairro.errors &&(bairro.dirty || bairro.touched)">
-                <div [hidden]="!bairro.errors['required']">Data de nascimento. </div>
+                <div [hidden]="!bairro.errors['required']">Data de nascimento: </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="cep">CEP: </label>
+            <input type="text" class="form-control" id="cep" name="cep" required
+            [(ngModel)]="endereco.cep" #cep="ngModel">
+            <div class="alert alert-danger" *ngIf="cep.errors &&(cep.dirty || cep.touched)">
+                <div [hidden]="!cep.errors['required']">Informe um cep válido: </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="cidade">Cidade: </label>
+            <input type="text" class="form-control" id="cidade" name="cidade" required
+            [(ngModel)]="endereco.cidade" #cidade="ngModel">
+            <div class="alert alert-danger" *ngIf="cidade.errors &&(cidade.dirty || cidade.touched)">
+                <div [hidden]="!cidade.errors['required']">informe a cidade: </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="estado">Estado: </label>
+            <input type="text" class="form-control" id="estado" name="estado" required
+            [(ngModel)]="endereco.estado" #estado="ngModel">
+            <div class="alert alert-danger" *ngIf="estado.errors &&(estado.dirty || estado.touched)">
+                <div [hidden]="!estado.errors['required']">Informe o estado: </div>
             </div>
         </div>
         <div class="form-group">
             <button type="button" class="btn btn-primary" (click)="inserir()" [disabled]="!formEndereco.form.valid">
                 <fa-icon [icon]="faSave"></fa-icon> Salvar
             </button>
-            <a class="btn btn-secondary" [routerLink]="['/pessoas/']">
+            <a class="btn btn-secondary" [routerLink]="['/enderecos/listar']">
                 <fa-icon [icon]="faArrowLeft" aria-hidden="true"></fa-icon> Voltar
             </a>
         </div> 

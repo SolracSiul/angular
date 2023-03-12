@@ -25,7 +25,7 @@ export class ListarEnderecoComponent {
   }
   remover($event: any, endereco: Endereco): void{
     $event.preventDefault();
-    if(confirm(`Deseja remover a pessoa ${endereco.rua}?`)){
+    if(confirm(`Deseja remover o endereço: ${endereco.rua}?`)){
       this.enderecoService.remover(endereco.id!);
       this.enderecos = this.listarTodos();
     }

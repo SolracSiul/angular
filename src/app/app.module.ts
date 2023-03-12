@@ -9,10 +9,13 @@ import { PessoaModule } from './pessoa/pessoa.module';
 import { EnderecoModule } from './endereco/endereco.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CidadeModule } from './cidade/cidade.module';
-
+import { EstadosModule } from './estados/estados.module';
+import { AuthModule } from './auth/auth.module';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,10 @@ import { CidadeModule } from './cidade/cidade.module';
     FontAwesomeModule,
     PessoaModule,
     EnderecoModule,
-    CidadeModule
+    CidadeModule,
+    EstadosModule,
+    NgbModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

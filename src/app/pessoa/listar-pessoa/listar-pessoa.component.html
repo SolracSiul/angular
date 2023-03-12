@@ -8,7 +8,7 @@
             <th>Idade</th>
             <th>Data de Nascimento</th>
             <th class="text-center">
-                <a href="#" title="Novo" alt="Novo" [routerLink]="['/cidades/novo']">
+                <a href="#" title="Novo" alt="Novo" [routerLink]="['/pessoas/novo']">
                     <fa-icon [icon]="faPlus"></fa-icon> Novo
                 </a>
             </th>
@@ -21,7 +21,11 @@
                 <a href="#" [routerLink]="['/pessoas/editar', pessoa.id]" title="Editar" alt="Editar" class="btn btn-xs btn-info">
                     <fa-icon [icon]="faedit"></fa-icon> Editar</a>
                 <a href="#"title="Remover" alt="Remover" (click)="remover($event, pessoa)" class="btn btn-xs btn-danger">
-                    <fa-icon [icon]="faTimes"></fa-icon> Remover</a>
+                    <fa-icon [icon]="faTimes"></fa-icon> Remover
+                </a>
+                <button type="button" class="btn btn-xs btn-info" (click)="abrirModalPessoa(pessoa)" >
+                        <i class="fa fa-eye" aria-hidden="true"></i> Ver
+                </button>
             </td>
         </tr>
     </tbody>
