@@ -10,8 +10,8 @@ import { EnderecoModule } from './endereco/endereco.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CidadeModule } from './cidade/cidade.module';
 import { EstadosModule } from './estados/estados.module';
-import { AuthModule } from './auth/auth.module';
 import { HomeComponent } from './home/home.component';
+import { AuthModule } from './auth/auth.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,7 @@ import { HomeComponent } from './home/home.component';
     CidadeModule,
     EstadosModule,
     NgbModule,
-    AuthModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

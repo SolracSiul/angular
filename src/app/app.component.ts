@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { faUserEdit } from '@fortawesome/free-solid-svg-icons';
 import { LoginService } from './auth/services/login.service';
+import { Router } from '@angular/router';
 import { Usuario } from './shared/models/usuario.model';
 
 @Component({
@@ -14,15 +14,15 @@ export class AppComponent {
   faCoffee = faCoffee;
   faEdit = faUserEdit;
   
-  constructor(private loginService: LoginService, private router: Router){ }
+  constructor(private router: Router, private loginService: LoginService){ }
 
-  get usuarioLogado (): Usuario {
-    return this.loginService.usuarioLogado
+  get usuarioLogado(): Usuario | null{
+    return this.loginService.usuarioLogado;
   }
-
   logout(){
-    this.loginService.logout()
-    this.router.navigate(['/login']);
+    this.loginService.logout();
+    this.router.navigate(['/login'])
   }
+
 
 }

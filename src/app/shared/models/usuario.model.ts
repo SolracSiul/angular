@@ -1,5 +1,4 @@
 export class Usuario {
-
     constructor(
         public id?: number,
         public nome?: string,
@@ -7,5 +6,4 @@ export class Usuario {
         public senha?: string,
         public perfil?: string,
     ){}
-
 }
