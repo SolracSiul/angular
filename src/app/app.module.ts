@@ -12,6 +12,9 @@ import { CidadeModule } from './cidade/cidade.module';
 import { EstadosModule } from './estados/estados.module';
 import { HomeComponent } from './home/home.component';
 import { AuthModule } from './auth/auth.module';
+import {HttpClientModule} from '@angular/common/http'
+import { UsuarioModule } from './usuario/usuario.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +31,9 @@ import { AuthModule } from './auth/auth.module';
     CidadeModule,
     EstadosModule,
     NgbModule,
-    AuthModule
+    AuthModule,
+    HttpClientModule,
+    UsuarioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

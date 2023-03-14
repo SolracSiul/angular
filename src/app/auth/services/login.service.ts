@@ -24,15 +24,15 @@ export class LoginService {
     delete localStorage[LS_CHAVE];
     }
     login(login: Login): Observable<Usuario | null> {
-    let usu = new Usuario(1, "Razer-Func",
+    let usu = new Usuario(1, "Sorak-Func",
     login.login, login.senha, "FUNC");
     if (login.login == login.senha) {
     if (login.login == "admin") {
-    usu = new Usuario(1, "Razer-Admin",
+    usu = new Usuario(1, "Sorak-Admin",
     login.login, login.senha, "ADMIN");
     }
     else if (login.login == "gerente") {
-    usu = new Usuario(1, "Razer-Gerente",
+    usu = new Usuario(1, "Sorak-Gerente",
     login.login, login.senha, "GERENTE");
     }
     return of(usu);

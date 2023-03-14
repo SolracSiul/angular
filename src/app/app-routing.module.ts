@@ -14,9 +14,9 @@ import { InserirPessoaComponent } from './pessoa/inserir-pessoa/inserir-pessoa.c
 import { ListarPessoaComponent } from './pessoa/listar-pessoa/listar-pessoa.component';
 
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './auth/login/login.component';
 import { LoginRoutes } from './auth/auth-routing.module';
 import { AuthGuard } from './auth/auth.guard';
+import { UsuarioRoutes } from './usuario/usuario-routing.module';
 
 const routes: Routes = [
   {
@@ -140,7 +140,8 @@ const routes: Routes = [
       role: 'ADMIN, GERENTE'
     }
   },
-  ...LoginRoutes
+  ...LoginRoutes,
+  ...UsuarioRoutes
 ];
 
 @NgModule({

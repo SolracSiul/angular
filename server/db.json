@@ -1,0 +1,18 @@
+{
+  "usuarios": [
+    {
+      "id": 2,
+      "nome": "Sorak_gerente",
+      "login": "gerente",
+      "senha": "gerente",
+      "perfil": "GERENTE"
+    },
+    {
+      "id": 3,
+      "nome": "Func",
+      "login": "func",
+      "senha": "func",
+      "perfil": "FUNC"
+    }
+  ]
+}
